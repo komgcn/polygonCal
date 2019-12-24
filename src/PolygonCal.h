@@ -6,15 +6,23 @@
 #define POLYGONCAL_POLYGONCAL_H
 
 #include "ShapeCal.h"
+#include <stdexcept>
 
 class PolygonCal : public ShapeCal{
 
 public:
 
     /*polygon points are assumed in clockwise or anti-clockwise order*/
-    PolygonCal(std::vector<Point> &points):ShapeCal(points){}
+    explicit PolygonCal(std::vector<Point> &points):ShapeCal(verify(points)){}
 
     virtual float area() const;
+
+private:
+    const std::vector<Point>& verify(const std::vector<Point> &points) const {
+        if(points.size() < 3)
+            throw std::runtime_error("Polygon must have at least 3 points!");
+        return points;
+    }
 };
 
 

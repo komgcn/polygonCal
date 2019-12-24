@@ -1,4 +1,4 @@
-set(SOURCE_FILES main.cpp PolygonCal.cpp TriCal.cpp ShapeCal.h Aux.h Point.h SquareCal.cpp SquareCal.h)
+set(SOURCE_FILES main.cpp PolygonCal.cpp TriCal.cpp ShapeCal.h Aux.h Point.h SquareCal.cpp SquareCal.h ../include/basicPtr.h)
 
 add_executable(polygonCal ${SOURCE_FILES})
 

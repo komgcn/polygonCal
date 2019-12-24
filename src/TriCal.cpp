@@ -4,11 +4,12 @@
 
 #include "TriCal.h"
 #include <cmath>
+#include <stdexcept>
 
 float TriCal::area() const {
     Point a = vertexes[0];
     Point b = vertexes[1];
     Point c = vertexes[2];
 
-    return (std::fabs(a.x*(b.y-c.y)+b.x*(c.y-a.y)+c.x*(a.y-b.y))) * 0.5;
+    return (std::fabs(a.x*(b.y-c.y)+b.x*(c.y-a.y)+c.x*(a.y-b.y))) * 0.5f;
 }

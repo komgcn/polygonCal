@@ -5,6 +5,7 @@
 #include "PolygonCal.h"
 #include "Aux.h"
 #include <cmath>
+#include <stdexcept>
 
 float PolygonCal::area() const {
 
@@ -21,5 +22,6 @@ float PolygonCal::area() const {
     total_area += Aux::crossMultiply(vertexes.back(),vertexes.front());
     total_area = std::fabs(total_area);
 
-    return total_area * 0.5;
+    return total_area * 0.5f;
 }
+
