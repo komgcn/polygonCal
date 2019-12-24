@@ -9,18 +9,10 @@ template <typename T>
 class basicPtr{
 
 public:
-    explicit basicPtr(T* _data):data(_data),count(0){
-         if(_data)
-         {
-             ++count;
-         }
-    }
+    explicit basicPtr(T* _data):data(_data){}
 
     ~basicPtr(){
-        if(0 == --count)
-        {
-            delete data;
-        }
+        delete data;
     }
 
     T& operator *(){
@@ -36,7 +28,6 @@ public:
 
 private:
     T *data;
-    int count;
 };
 
 

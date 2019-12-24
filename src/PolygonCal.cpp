@@ -15,7 +15,7 @@ float PolygonCal::area() const {
     float total_area = 0.0;
 
     std::size_t i;
-    for(i = 0;i < vertexes.size(); ++i)
+    for(i = 0;i < vertexes.size()-1; ++i)
     {
         total_area += Aux::crossMultiply(vertexes[i],vertexes[i+1]);
     }
