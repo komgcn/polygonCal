@@ -3,13 +3,13 @@
 //
 
 #include "gtest/gtest.h"
-#include "../src/PolygonCal.h"
+#include "../src/TriCal.h"
 
-TEST(PolygonCalTestSuite, CorrectArea){
+TEST(TriCalTestSuite, CorrectArea){
 
-    std::vector<Point> vec{Point(0,0),Point(5,2),Point(4,-4)};
-    PolygonCal pCal(vec);
+    std::vector<Point> vec{Point(0,0), Point(5,2),Point(4,-4)};
+    TriCal tri(vec);
 
-    EXPECT_EQ(pCal.area(),14);
+    EXPECT_EQ(tri.area(),14);
 
 }
