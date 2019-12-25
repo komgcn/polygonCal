@@ -13,3 +13,6 @@ folder /include contains a self-made unique pointer .h
 
 folder /src contains the main codes
 
+ShapeCal is the BASE class.
+
+DERIVED classes are TriCal, SquareCal, PolygonCal.
