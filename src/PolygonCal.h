@@ -14,7 +14,7 @@ public:
 
     /*polygon points are assumed in clockwise or anti-clockwise order*/
     explicit PolygonCal(std::vector<Point> &points):ShapeCal(verify(points)){}
-
+    
     virtual float area() const;
 
 private:

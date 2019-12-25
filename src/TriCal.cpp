@@ -3,8 +3,8 @@
 //
 
 #include "TriCal.h"
+#include "Point.h"
 #include <cmath>
-#include <stdexcept>
 
 float TriCal::area() const {
     Point a = vertexes[0];

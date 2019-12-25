@@ -5,14 +5,16 @@
 #ifndef POLYGONCAL_SHAPECAL_H
 #define POLYGONCAL_SHAPECAL_H
 
-#include "Point.h"
 #include <vector>
+#include "Point.h"
 
 class ShapeCal {
 
 public:
 
-    explicit ShapeCal(const std::vector<Point> &points):vertexes(points){}  //
+    explicit ShapeCal(const std::vector<Point> &points):vertexes(points){}
+
+    virtual ~ShapeCal(){} = default;
 
     virtual float area() const = 0;
 
