@@ -4,24 +4,23 @@
 
 #include "gtest/gtest.h"
 #include "../src/SquareCal.h"
+#include "../src/Point.h"
+#include <vector>
+#include <stdexcept>
 
-namespace{
+TEST(SquareCalTestSuite, CorrectArea){
 
-class SquareCalTest : public testing::Test{
+    std::vector<Point> points{Point(-2,35),Point(38,35),Point(38,-5),Point(-2,-5)};
+    SquareCal square;
 
-protected:
-    void SetUp() override {
-        points = {Point(-2,35),Point(38,35),Point(38,-5),Point(-2,-5)};
-    }
+    ASSERT_EQ(square.calculateArea(points), 1600);
 
-    //TearDown() override
-
-    std::vector<Point> points;
-};
-
-TEST_F(SquareCalTest, CorrectArea) {
-
-        SquareCal square();
 }
 
+TEST(SquareCalTestSuite, IncorrectInputThrowsError){
+
+    std::vector<Point> points{Point(5,2),Point(4,-4),Point(38,35),Point(38,35),Point(38,35)};
+    SquareCal square;
+
+    ASSERT_THROW(square.calculateArea(points),std::runtime_error);
 }

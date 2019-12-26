@@ -3,4 +3,5 @@ set(SOURCE_FILES PolygonCal.cpp TriCal.cpp ShapeCal.h Aux.h Point.h SquareCal.cp
 add_library(polygonCal ${SOURCE_FILES})
 
 add_executable(main main.cpp ${SOURCE_FILES})
+
 target_include_directories(polygonCal PUBLIC "${PROJECT_BINARY_DIR}")
