@@ -12,14 +12,12 @@ class ShapeCal {
 
 public:
 
-    explicit ShapeCal(std::vector<Point> points):vertexes(std::move(points)){}
+    explicit ShapeCal() = default;
 
     virtual ~ShapeCal() = default;
 
-    virtual float area() const = 0;
+    virtual float calculateArea(const std::vector<Point>&) const = 0;
 
-protected:
-    std::vector<Point> vertexes;
 };
 
 

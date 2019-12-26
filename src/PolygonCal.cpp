@@ -4,21 +4,22 @@
 
 #include "PolygonCal.h"
 #include "Aux.h"
+#include "Point.h"
+#include <vector>
 #include <cmath>
+#include <stdexcept>
 
-float PolygonCal::area() const {
-
-    if (vertexes.size() < 3)
-        return 0.0f;
+float PolygonCal::calculateArea(const std::vector<Point> &points) const {
+    if(points.size() < 3)
+        throw std::runtime_error("A polygon must have at least 3 points!");
 
     float total_area = 0.0f;
 
-    std::size_t i;
-    for(i = 0;i < vertexes.size()-1; ++i)
+    for(std::size_t i = 0;i < points.size()-1; ++i)
     {
-        total_area += Aux::crossMultiply(vertexes[i],vertexes[i+1]);
+        total_area += Aux::crossMultiply(points[i],points[i+1]);
     }
-    total_area += Aux::crossMultiply(vertexes.back(),vertexes.front());
+    total_area += Aux::crossMultiply(points.back(),points.front());
 
     return std::fabs(total_area) * 0.5f;
 }

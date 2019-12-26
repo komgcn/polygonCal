@@ -4,9 +4,14 @@
 
 #include "SquareCal.h"
 #include <cmath>
+#include <vector>
+#include <stdexcept>
 #include "Aux.h"
+#include "Point.h"
 
-float SquareCal::area() const {
+float SquareCal::calculateArea(const std::vector<Point> &points) const {
+    if (points.size() != 4)
+        throw std::runtime_error("A square must have 4 points!");
 
-    return std::pow(Aux::distance(vertexes[0],vertexes[1]),2.0f);
+    return std::pow(Aux::distance(points[0],points[1]),2.0f);
 }

@@ -21,9 +21,7 @@ protected:
 
 TEST_F(SquareCalTest, CorrectArea) {
 
-        SquareCal square(points);
-
-        EXPECT_EQ(square.area(), 1602);
+        SquareCal square();
 }
 
 }

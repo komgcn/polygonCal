@@ -15,11 +15,15 @@ public:
         delete data;
     }
 
-    T& operator *(){
+    T& operator *() const{
         return *data;
     }
 
-    T& operator ->(){
+    T* operator->() const{
+        return data;
+    }
+
+    T& get() const{
         return *data;
     }
 
